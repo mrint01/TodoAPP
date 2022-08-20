@@ -30,17 +30,7 @@ mongoose
   app.use("/auth", require("./routes/profileRoutes"));
   app.use("/auth", require("./routes/todosRoutes"));
 // ----------- Public Images -----------//
-app.use(express.static('public'));
 
-// ----------- Static Files -----------//
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/dist/td-app')));
-  app.get('*', (req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, '../client/dist', 'td-app', 'index.html')
-    );
-  });
-}
   app.listen(PORT, (error) =>{
     if(!error)
         console.log("Server is Successfully Running,and App is listening on port "+ PORT)
