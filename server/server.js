@@ -38,7 +38,10 @@ mongoose
   });
 
 */
-app.get('/*', (req, res) => res.send('Index Page'));
+app.use(express.static(__dirname + "/../client/dist/"));
+app.get(/.*/, (req, res) => {
+  res.sendFile(__dirname + "/../client/dist/index.html");
+});
 
   app.listen(PORT, (error) =>{
     if(!error)
