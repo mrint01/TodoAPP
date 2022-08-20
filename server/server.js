@@ -31,13 +31,24 @@ mongoose
   app.use("/auth", require("./routes/todosRoutes"));
 // ----------- Public Images -----------//
 
-
+/*
   app.use(express.static(__dirname + "/../client/dist"));
   app.all("*", (req, res) => {
     res.status(200).sendFile(__dirname,  "/../client/dist/index.html");
   });
 
+*/
+app.get('/', (req, res, next) => {
 
+  res.status(200).json({
+      status: 'success',
+      data: {
+          name: 'name of your app',
+          version: '0.1.0'
+      }
+  });
+
+});
   app.listen(PORT, (error) =>{
     if(!error)
         console.log("Server is Successfully Running,and App is listening on port "+ PORT)
