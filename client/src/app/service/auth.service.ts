@@ -22,11 +22,11 @@ export class AuthService {
     return this.http.post('auth/login',body)
   }
   update_profile(body){
-    return this.http.put('https://todoappv01.herokuapp.com/auth/profile',body)
+    return this.http.put('auth/profile',body)
    
 }
   profile(body): Observable<User[]>{
-    return this.http.post<User[]>('https://todoappv01.herokuapp.com/auth/profile', body)
+    return this.http.post<User[]>('auth/profile', body)
  
 }
 
