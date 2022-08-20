@@ -38,17 +38,8 @@ mongoose
   });
 
 */
-app.get('/', (req, res, next) => {
+app.get('/*', (req, res) => res.send('Index Page'));
 
-  res.status(200).json({
-      status: 'success',
-      data: {
-          name: 'name of your app',
-          version: '0.1.0'
-      }
-  });
-
-});
   app.listen(PORT, (error) =>{
     if(!error)
         console.log("Server is Successfully Running,and App is listening on port "+ PORT)
