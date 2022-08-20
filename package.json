@@ -13,7 +13,7 @@
     "server": "npm  start --prefix server ",
     "client": "npm start --prefix client",
     "install": "npm install --prefix server && npm install --prefix client",
-    "start": "npm start --prefix server",
+    "start": "node server/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",

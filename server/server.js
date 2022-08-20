@@ -38,9 +38,9 @@ mongoose
   });
 
 */
-app.use(express.static(__dirname + "/../client/dist/td-app/"));
-app.get(/.*/, (req, res) => {
-  res.sendFile(__dirname + "/../client/dist/td-app/index.html");
+app.use(express.static(__dirname + "../client/dist"));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + "../client/dist/index.html");
 });
 
   app.listen(PORT, (error) =>{
