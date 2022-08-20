@@ -15,11 +15,11 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   Siginup(body : User){
-    return this.http.post('https://todoappv01.herokuapp.com/auth/signup',body )
+    return this.http.post('auth/signup',body )
   }
 
   Sigin(body){
-    return this.http.post('https://todoappv01.herokuapp.com/auth/login',body)
+    return this.http.post('auth/login',body)
   }
   update_profile(body){
     return this.http.put('https://todoappv01.herokuapp.com/auth/profile',body)
