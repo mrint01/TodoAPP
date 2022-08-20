@@ -7,8 +7,9 @@ const User = require("../models/User");
 
 router.post("/add", (req, res) => {
     const data = req.body;
+
     let todo = new Todo({
-        user_id: data.user,
+        user_id: data.user.user,
         text: data.text,
     });
     todo
@@ -26,7 +27,7 @@ router.post("/add", (req, res) => {
 
 router.get("/todos/get/:id", (req, res) => {
     const data = req.params;
-    Todo.find({ user_id: data.id._id })
+    Todo.find({ user_id: data.id })
         .then((todo) => {
             res.json(todo);
         })

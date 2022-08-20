@@ -15,10 +15,10 @@ export class TodosService {
   constructor(private http: HttpClient) { }
 
   Todos(body): Observable<Todo[]>{
-    return this.http.get<Todo[]>('auth/todos/get/id' + body.user._id )
+    return this.http.get<Todo[]>('auth/todos/get/' + body.user._id )
   }
-  Add_odos(body: any){
-    return this.http.post<Todo[]>('auth/add',body )
+  Add_odos(body){
+    return this.http.post('auth/add',body )
   }
   Update_odos(body){
     return this.http.put('auth/todos/update/' +body._id, body)
