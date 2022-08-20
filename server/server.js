@@ -30,9 +30,9 @@ mongoose
   app.use("/auth", require("./routes/profileRoutes"));
   app.use("/auth", require("./routes/todosRoutes"));
 // ----------- Public Images -----------//
-var distDir = __dirname + "/dist/";
+var distDir = __dirname + "../client/dist/";
  app.use(express.static(distDir));
- 
+
   app.listen(PORT, (error) =>{
     if(!error)
         console.log("Server is Successfully Running,and App is listening on port "+ PORT)
