@@ -1,4 +1,4 @@
 # dependencies
-/TodosAPP/node_modules
-/TodosAPP/server/node_modules
-/TodosAPP/server/.env
+/client/node_modules
+/server/node_modules
+/server/.env

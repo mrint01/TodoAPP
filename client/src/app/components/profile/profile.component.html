@@ -1,0 +1,52 @@
+<section class="vh-100 gradient-custom">
+    <form (ngSubmit)="updateProfile()" name="f2" >
+    <div class="container py-5 h-100">
+        <div class="container rounded bg-white mt-5 mb-5">
+            <div style="margin-left:15px;">
+                <span><a routerLink="/todos" >
+                  <img style="width:30px;margin-top:10px" src="../../../assets/img/arrow.svg"/>
+                </a></span>
+             
+            </div>
+            <div class="row">
+                <div class="col-md-3 border-right">
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                        <img style="width:100px; height: 100px;" class="rounded-circle mt-5"
+                            src={{user.user.Avatar}}>
+                        <span class="font-weight-bold">{{nameold}} </span>
+                        <span class="text-black-50">{{emailold}} </span><span> </span>
+                    </div>
+                </div>
+                <div class="col-md-5 border-right">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Profile Settings</h4>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-6">
+                                <label class="labels">Full Name</label>
+   <input  name="name" [(ngModel)] ="name" type="text" class="form-control" placeholder={{nameold}} value="">
+                            </div>
+                            <div class="col-md-6"><label class="labels">Email</label>
+    <input name="email" [(ngModel)] ="email" type="email" class="form-control"  placeholder={{emailold}} value=""></div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Password</label>
+   <input name="password" type="password"  [(ngModel)] ="password"  class="form-control" placeholder="Password" value=""></div>
+                            <div class="col-md-12"><label class="labels">Confirm Password</label>
+    <input name="password2" type="password"  [(ngModel)] ="password2" class="form-control" placeholder="Confirm Password" value=""></div>
+                        </div>
+
+                            <br/>
+                        <div *ngIf="error_msg.length >0" class="alert alert-danger">{{error_msg}} </div>
+                        <div *ngIf="success_msg.length >0" class="alert alert-success">{{success_msg}} </div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save
+                                Profile</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+</section>
