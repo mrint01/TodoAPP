@@ -30,8 +30,13 @@ mongoose
   app.use("/auth", require("./routes/profileRoutes"));
   app.use("/auth", require("./routes/todosRoutes"));
 // ----------- Public Images -----------//
-var distDir = __dirname + "../client/dist/";
- app.use(express.static(distDir));
+
+ if (process.env.NODE_ENV === "production") {
+  app.use(express.static("dist"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname,  "../client/dist", "index.html"));
+  });
+}
 
   app.listen(PORT, (error) =>{
     if(!error)
