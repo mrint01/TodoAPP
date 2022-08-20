@@ -15,18 +15,18 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   Siginup(body : User){
-    return this.http.post('http://127.0.0.1:3000/auth/signup',body )
+    return this.http.post('https://todoappv01.herokuapp.com/auth/signup',body )
   }
 
   Sigin(body){
-    return this.http.post('http://127.0.0.1:3000/auth/login',body)
+    return this.http.post('https://todoappv01.herokuapp.com/auth/login',body)
   }
   update_profile(body){
-    return this.http.put('http://127.0.0.1:3000/auth/profile',body)
+    return this.http.put('https://todoappv01.herokuapp.com/auth/profile',body)
    
 }
   profile(body): Observable<User[]>{
-    return this.http.post<User[]>('http://127.0.0.1:3000/auth/profile', body)
+    return this.http.post<User[]>('https://todoappv01.herokuapp.com/auth/profile', body)
  
 }
 

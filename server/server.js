@@ -32,9 +32,9 @@ mongoose
 // ----------- Public Images -----------//
 
 
-  app.use(express.static(__dirname + "../client/dist"));
-  app.get("*", (req, res) => {
-    res.status(200).sendFile(__dirname,  "../client/dist/index.html");
+  app.use(express.static(__dirname + "/../client/dist"));
+  app.all("*", (req, res) => {
+    res.status(200).sendFile(__dirname,  "/../client/dist/index.html");
   });
 
 
