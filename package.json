@@ -8,7 +8,6 @@
     "npm": "6.14.8"
   },
   "scripts": {
-    "preinstall": "npm link @angular/cli ",
     "ng": "ng",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "npm  start --prefix server ",
