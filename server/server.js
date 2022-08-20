@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require('dotenv');
+const path = require('path');
 const passportConfig = require("./lib/passportConfig");
 dotenv.config();
 const app = express();
@@ -38,9 +39,10 @@ mongoose
   });
 
 */
-app.use(express.static(__dirname + "/../client/dist"));
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + "/../client/dist/index.html");
+app.use(express.static((path.join(__dirname + "./dist/td-app"))));
+app.use('/', express.static(path.join(__dirname, './dist/td-app')))
+app.get('**', (req, res) => {
+  res.sendFile(path.join((__dirname + "./dist/td-app/index.html")));
 });
 
   app.listen(PORT, (error) =>{
