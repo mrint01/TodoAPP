@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "npm  start --prefix TodosAPP/server ",
-    "client": "ng start --prefix TodosAPP",
-    "install": "npm install --prefix TodosAPP/server && ng install --prefix TodosAPP",
-    "start": "npm start --prefix TodosAPP/server",
-    "heroku-postbuild": "ng run build --prefix TodosAPP"
+    "server": "npm  start --prefix server ",
+    "client": "npm start --prefix client",
+    "install": "npm install --prefix server && npm install --prefix client",
+    "start": "npm start --prefix server",
+    "heroku-postbuild": "npm run build --prefix client"
   },
   "author": "",
   "license": "ISC"
