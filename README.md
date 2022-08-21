@@ -1,2 +1,2 @@
-# ToDo App
-# TodoAPP using MEAN stack: Angular ♥ ExpressJs ♥ MongoDB ♥ Nodejs ♥
+# ToDo App ⚡️
+# Using MEAN stack: Angular ♥ ExpressJs ♥ MongoDB ♥ Nodejs ♥
